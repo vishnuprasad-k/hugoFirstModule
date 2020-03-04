@@ -1,0 +1,182 @@
+<article class="top-row"> 
+    <div class="container">
+      <div class="row mb-1">
+        <div class="col-lg-3 col-md-12 col-sm-12 logo-align">
+          <a href="/" title="Medigy">
+            <img src="/images/logo.png" class="logo-style">
+          </a>
+        </div>
+        <div class="col-lg-9 col-md-12 col-sm-12 col-12">
+          <div id="custom-search-input">
+            <div class="row">            
+              <div class="col-lg-12 col-sm-12">
+                <div class="row add-offer-zone">
+                  <div class="admin-area">
+                    <div class="offerings-col">
+                      <span class="addoffer-col">
+                        <a id="postform" href="#">
+                          <button class="post-bt" id="Top_Add_Offering_Button">Add / Suggest...</button>
+                        </a>
+                      </span>
+                    </div>
+                    <div class="member-col">
+                      <span class="log-bt-col">
+                        <a id="userlogin" href="#" class="login-bt Top_Login_Button">Login</a>
+                      </span>
+                      <span id="sessionname" class="user-ttl"></span>
+                      <span class="set-list user-ico" style="display:none;">
+                        <div class="dropdown" style="display: none;">
+
+                          <script>
+                            $(document).ready(function () {
+                              var profileImage = getCookie('profileImage');
+                              if (profileImage == 'null' || profileImage == 'undefined') {
+
+
+
+                                var email = getCookie('userEmail');
+
+
+                                if (email.length > 0) {
+
+                                  var md5 = $.md5(email);
+
+
+                                  var gravatar = 'https://gravatar.com/avatar/' + md5 + '?&d=404';
+                                  $.ajax({
+                                    url: gravatar,
+                                    type: "HEAD",
+                                    crossDomain: true,
+                                    error: function () {
+                                      $(".member-thumb").attr("src", "/img/member-thumb.jpg");
+                                    },
+                                    success: function () {
+
+                                      $(".member-thumb").attr("src", gravatar);
+                                    }
+                                  });
+                                }
+
+
+                              }
+                              else {
+                                $('.member-thumb').attr('src', profileImage);
+                              }
+
+                            });
+                          </script>
+                          <a href="#">
+                            <img class="dropbtn member-thumb"> </a>
+                          <div id="myDropdown" class="dropdown-content">
+                            <a href="/feedback/" class="login-bt">Looking for Something?</a>
+                            <a href="/my-profile/" class="login-bt">My Profile</a>
+                            <a href="/my-institutions/" class="login-bt">My Institutions</a>
+                            <a href="/my-offerings/" class="login-bt">My Offerings</a>
+                            <a href="/my-claims/" class="login-bt">My Claims</a>
+                            <a id="claimDashboardMenu" href="/claiming-dashboard/" class="login-bt" style="display:none">Claiming Dashboard</a>
+                            <a id="userlogout" style="display:none;" href="#" class="login-bt">logout</a>
+                          </div>
+                        </div>
+                      </span>
+                    </div>
+                  </div>
+				  
+				  
+                  <form id="searchsubmit" action="/search/" class="companies-lists search-align space-hm">
+					
+					
+					
+                  <div class="input-group">
+                    <input type="text" id="search-query" name="s" class="  search-query form-control" placeholder="Search">
+                    <input type="hidden" id="es-page" name="page" value="1">
+                    <span class="input-group-btn">
+                      <button id="zoomsearch" class="btn btn-danger Top_Search_Bar" type="submit">
+                        <i class="fas fa-search"></i>
+                      </button>
+                    </span>
+                  </div>
+                </form>
+               
+                </div>
+
+
+              </div>
+            </div>
+
+
+
+          </div>
+        </div>
+
+
+      </div>
+
+      <div class="row b-t-1">
+        <div class="col-lg-9 col-md-8 col-sm-7 col">
+          <nav class="navbar navbar-light navbar-expand-lg top-nav mt-1">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a id="Home_Top_Menu" class="nav-link menu-selected" href="/">Home
+                  </a>
+                </li>
+               
+                <li class="nav-item active">
+                  <a id="Daily_Brief_Top_Menu" class="nav-link" href="/brief/daily/offerings/discovered/">Daily Brief
+                  </a>
+                </li>
+                 <li class="nav-item active">
+                  <a id="Innovation_Lifecycle_Top_Menu" class="nav-link" href="/innovation-lifecycle-management/projects/">Innovation Lifecycle
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a id="Categories_Top_Menu" class="nav-link" href="/topics">Topics</a>
+                </li> 
+                <li class="nav-item">
+                  <a id="Profiles_Top_Menu" class="nav-link" href="/profile/regulated/institution/us-dhhs-cms/hospital/" title="Healthcare Delivery Organizations (HDOs)">HDOs</a>
+                </li>                                
+  
+                
+                
+                <li class="nav-item">
+                    <a id="News_Top_Menu" class="nav-link" href="/news">News
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a id="Events_Top_Menu" class="nav-link" href="/events">Events
+                    </a>
+                  </li> 
+                  <li class="nav-item">
+                      <a id="Feeds_Top_Menu" class="nav-link" href="/feed/latest">Feeds
+                      </a>
+                  </li>                                     
+                  <li class="nav-item">
+                      <a id="Awards_Top_Menu" class="nav-link" href="/recognition/awards/">Awards 
+                      </a>
+                  </li>      
+                  
+                
+
+
+              </ul>
+            </div>
+          </nav>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-5 col">
+          <div class="float-right owned">
+            <div class="float-right text-left">Published by
+              <br>
+              <a href="http://shahidshah.com/" target="blank">@ShahidNShah</a>
+            </div>
+            <div class="float-right">
+              <img src="/images/shahid-sha.png" width="40">
+            </div>
+            <div class="clear-fix"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
